@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Generic Page - Massively by HTML5 UP</title>
+		<title>Titanic Survivors Predictive Model</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -25,11 +25,12 @@
 				<!-- Nav -->
 					<nav id="nav">
 						<ul class="links">
+							
 							<li><a href="index.html">Home</a></li>
+							<li class="active"><a href="titanicSurvivorsModel.html">Titanic Surivors M.L. Model</a></li>
+							<li><a href="interactiveGraph.html">V.A.P iplot</a></li>
 							<li><a href="sportempire.html" class="logo">SportEmpire</a></li>
 							<li><a href="pypong.html">PyPong</a></li>
-							<li><a href="interactiveGraph.html">VAP Density Plot</a></li>
-							<li class="active"><a href="titanicSurvivorsModel.html">Titanic Surivors M.L. Model</a></li>
 							
 						</ul>
 						<ul class="icons">
@@ -52,20 +53,21 @@
 								<div class="image main"><img src="images/titanic.png" alt="" /></div>
 								<p><span class="image left"><img src="images/titan_firstleft.png" alt="" /></span>The passenger data utilized by the model was obtained using a popular data science library for python named Pandas.
 									Pandas contains a convienent Pandas.read_csv() method which inputs the data from the .CSV file into the calling methods 
-									memory space, in an easy to read/interpret data structure known as a DataFrame. A DataFrame is a Pandas utility 
-									referenced as "Pandas.DataFrame()".
+									memory space, in an easy to read/interpret data structure known as a DataFrame. Referenced "Pandas.DataFrame()".
+						
 								</p>
 								<p><span class="image right"><img src="images/titan_firstright.png" alt="" /></span>
 									After inputting the passenger data to my M.L. models workspace, it had to be cleaned and prepared for the fitting of the model.
 									In this case the data set was missing a sizeable amount of data from both passenger's known age and also the cabin for which 
 									each passenger stayed the night. Due to this I decided it would be best to drop the cabin label in  due to over half the 
-									data set missing it. As for the age, I calculated a fitting imputation and filled the missing data labels with these imputations. 
+									data set missing it. As for the age, I calculated a fitting imputation and filled the missing data labels with these imputations.
 								</p>
 								<p>
 									<span class="image left"><img src="images/titan_secondleft.png" alt="" /></span>
 									After the data was cleaned, it was ready for the model to be fitted. Which required the creation of dummy variables from each
 									categorical data type. In order to avoid multi-collinearity I dropped any 
-									perfect predictive variables.
+									perfect predictive variables. By using Pandas DataFrame.Drop() method, and ensuring in place
+									was set to true (ensures original DataFrame saves changes).
 								</p>
 								<p>
 									<span class="image left"><img src="images/titan_thirdleft.PNG" alt="" /></span>
@@ -73,6 +75,7 @@
 									validation method "train_test_split". 
 								</p>
 								<p><span class="image right"><img src="images/titan_secondright.png" alt="" /></span>
+									<br><br>
 									Now that I had both a cleaned test and trained data set it was time to instantiate a linear regression model to fit my training
 									data to. This was achieved with sklearn's LogisticRegression model. After instantiating the logistic model I fit it with the training data
 									and then used the model to make predictions given the test data. To ensure metrics were up to my standard I used sklearn's classification_report
